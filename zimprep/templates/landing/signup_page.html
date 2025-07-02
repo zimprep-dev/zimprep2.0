@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
-    <link rel="stylesheet" href="{% static 'landing/signup.css'%}">
-    
-
+    <link rel="stylesheet" href="{% static 'css-landing/signup.css'%}">
 </head>
 <body>
     <div class="signup-container">
@@ -38,22 +36,55 @@
             <span>or continue with email</span>
         </div>
 
-        <form onsubmit="handleEmailSignup(event)">
+        {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+            <div class="message {% if message.tags %}{{ message.tags }}{% endif %}">
+                {{ message }}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <form method="post">
+            {% csrf_token %}
             <div class="form-group">
-                <label for="email">Email address</label>
-                <input type="email" id="email" name="email" required placeholder="Enter your email">
+                <label for="{{ form.username.id_for_label }}">{{ form.username.label }}</label>
+                {{ form.username }}
+                {% if form.username.errors %}
+                <div class="error">{{ form.username.errors.0 }}</div>
+                {% endif %}
             </div>
 
             <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required placeholder="Create a password">
+                <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+                {{ form.email }}
+                {% if form.email.errors %}
+                <div class="error">{{ form.email.errors.0 }}</div>
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.password1.id_for_label }}">{{ form.password1.label }}</label>
+                {{ form.password1 }}
+                {% if form.password1.errors %}
+                <div class="error">{{ form.password1.errors.0 }}</div>
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.password2.id_for_label }}">{{ form.password2.label }}</label>
+                {{ form.password2 }}
+                {% if form.password2.errors %}
+                <div class="error">{{ form.password2.errors.0 }}</div>
+                {% endif %}
             </div>
 
             <button type="submit" class="signup-btn">Create Account</button>
         </form>
 
         <div class="login-link">
-            Already have an account? <a href="#">Sign in</a>
+            Already have an account? <a href="{% url 'login' %}">Sign in</a>
         </div>
     </div>
 
@@ -66,15 +97,6 @@
         function handleAppleSignup() {
             // Placeholder for Apple Sign In integration
             alert('Apple sign-up would be implemented here with Apple Sign In API');
-        }
-
-        function handleEmailSignup(event) {
-            event.preventDefault();
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            
-            // Placeholder for email/password signup logic
-            alert(`Account creation attempted with email: ${email}`);
         }
 
         // Add smooth focus animations

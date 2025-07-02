@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZimPrep - Notes</title>
+     <link rel="stylesheet" href= "{% static 'dashboard/notes.css' %}">
+    <script src="{% static 'js/script.js'%}" defer></script>
+
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">ZimPrep</div>
+        
+        <a href="#" class="nav-item">
+            <svg class="nav-icon" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+            </svg>
+            Dashboard
+        </a>
+        
+        <a href="#" class="nav-item active">
+            <svg class="nav-icon" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                <path fill-rule="evenodd" d="M4 5a2 2 0 012-2v1a1 1 0 102 0V3h4v1a1 1 0 102 0V3a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3z"/>
+            </svg>
+            Notes
+        </a>
+        
+        <a href="#" class="nav-item">
+            <svg class="nav-icon" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            Exam Papers
+        </a>
+        
+        <a href="#" class="nav-item">
+            <svg class="nav-icon" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"/>
+            </svg>
+            Study Plan
+        </a>
+        
+        <a href="#" class="nav-item">
+            <svg class="nav-icon" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 2L3 7v11a1 1 0 001 1h12a1 1 0 001-1V7l-7-5z"/>
+            </svg>
+            Notifications
+        </a>
+        
+        <a href="#" class="nav-item">
+            <svg class="nav-icon" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"/>
+            </svg>
+            Settings
+        </a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="header">
+            <div class="search-container">
+                <svg class="search-icon" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"/>
+                </svg>
+                <input type="text" class="search-input" placeholder="Search notes...">
+            </div>
+            
+            <div class="user-profile">
+                <div class="user-avatar">JS</div>
+                <span style="color: #374151; font-weight: 500;">John Smith</span>
+            </div>
+        </div>
+
+        <h1 class="page-title">Notes</h1>
+        <p class="page-subtitle">Organize your study notes, key concepts, and important information</p>
+
+        <div class="notes-toolbar">
+            <div class="filter-group">
+                <div class="filter-group">
+                    <span class="filter-label">Subject:</span>
+                    <select class="filter-select">
+                        <option>All Subjects</option>
+                        <option>Mathematics</option>
+                        <option>Physics</option>
+                        <option>Chemistry</option>
+                        <option>Biology</option>
+                        <option>English</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <span class="filter-label">Type:</span>
+                    <select class="filter-select">
+                        <option>All Types</option>
+                        <option>Lecture Notes</option>
+                        <option>Study Guide</option>
+                        <option>Summary</option>
+                        <option>Formula Sheet</option>
+                    </select>
+                </div>
+            </div>
+            
+            <button class="new-note-btn">+ New Note</button>
+        </div>
+
+        <div class="notes-grid">
+            <div class="note-card">
+                <div class="note-header">
+                    <div>
+                        <div class="note-title">Quadratic Equations</div>
+                        <span class="note-subject subject-mathematics">Mathematics</span>
+                    </div>
+                </div>
+                <div class="note-content">
+                    Key formulas and methods for solving quadratic equations. Includes discriminant analysis, factoring techniques, and graphical interpretations. Remember: ax² + bx + c = 0...
+                </div>
+                <div class="note-meta">
+                    <div class="note-date">
+                        <svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"/>
+                        </svg>
+                        December 1, 2024
+                    </div>
+                    <div class="note-actions">
+                        <a href="#" class="note-action">Edit</a>
+                        <a href="#" class="note-action">Share</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="note-card">
+                <div class="note-header">
+                    <div>
+                        <div class="note-title">Newton's Laws of Motion</div>
+                        <span class="note-subject subject-physics">Physics</span>
+                    </div>
+                </div>
+                <div class="note-content">
+                    Comprehensive overview of Newton's three laws. Law 1: Objects at rest stay at rest. Law 2: F = ma. Law 3: For every action, there's an equal and opposite reaction...
+                </div>
+                <div class="note-meta">
+                    <div class="note-date">
+                        <svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"/>
+                        </svg>
+                        November 28, 2024
+                    </div>
+                    <div class="note-actions">
+                        <a href="#" class="note-action">Edit</a>
+                        <a href="#" class="note-action">Share</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="note-card">
+                <div class="note-header">
+                    <div>
+                        <div class="note-title">Organic Chemistry Basics</div>
+                        <span class="note-subject subject-chemistry">Chemistry</span>
+                    </div>
+                </div>
+                <div class="note-content">
+                    Introduction to organic compounds, functional groups, and naming conventions. Carbon bonding patterns and molecular structures. Key reactions include substitution...
+                </div>
+                <div class="note-meta">
+                    <div class="note-date">
+                        <svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"/>
+                        </svg>
+                        November 25, 2024
+                    </div>
+                    <div class="note-actions">
+                        <a href="#" class="note-action">Edit</a>
+                        <a href="#" class="note-action">Share</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="note-card">
+                <div class="note-header">
+                    <div>
+                        <div class="note-title">Cell Division Process</div>
+                        <span class="note-subject subject-biology">Biology</span>
+                    </div>
+                </div>
+                <div class="note-content">
+                    Detailed notes on mitosis and meiosis. Phases include prophase, metaphase, anaphase, and telophase. Key differences between the two processes and their biological significance...
+                </div>
+                <div class="note-meta">
+                    <div class="note-date">
+                        <svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"/>
+                        </svg>
+                        November 22, 2024
+                    </div>
+                    <div class="note-actions">
+                        <a href="#" class="note-action">Edit</a>
+                        <a href="#" class="note-action">Share</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="note-card">
+                <div class="note-header">
+                    <div>
+                        <div class="note-title">Essay Writing Techniques</div>
+                        <span class="note-subject subject-english">English</span>
+                    </div>
+                </div>
+                <div class="note-content">
+                    Structure and techniques for effective essay writing. Introduction should hook the reader, body paragraphs need topic sentences, and conclusions should synthesize...
+                </div>
+                <div class="note-meta">
+                    <div class="note-date">
+                        <svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"/>
+                        </svg>
+                        November 20, 2024
+                    </div>
+                    <div class="note-actions">
+                        <a href="#" class="note-action">Edit</a>
+                        <a href="#" class="note-action">Share</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="note-card">
+                <div class="note-header">
+                    <div>
+                        <div class="note-title">Trigonometry Identities</div>
+                        <span class="note-subject subject-mathematics">Mathematics</span>
+                    </div>
+                </div>
+                <div class="note-content">
+                    Essential trigonometric identities and formulas. Pythagorean identities, angle sum formulas, double angle formulas. sin²θ + cos²θ = 1 is fundamental...
+                </div>
+                <div class="note-meta">
+                    <div class="note-date">
+                        <svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"/>
+                        </svg>
+                        November 18, 2024
+                    </div>
+                    <div class="note-actions">
+                        <a href="#" class="note-action">Edit</a>
+                        <a href="#" class="note-action">Share</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple search functionality
+        document.querySelector('.search-input').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const noteCards = document.querySelectorAll('.note-card');
+            
+            noteCards.forEach(card => {
+                const title = card.querySelector('.note-title').textContent.toLowerCase();
+                const content = card.querySelector('.note-content').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || content.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Filter functionality
+        document.querySelectorAll('.filter-select').forEach(select => {
+            select.addEventListener('change', function() {
+                filterNotes();
+            });
+        });
+
+        function filterNotes() {
+            const subjectFilter = document.querySelectorAll('.filter-select')[0].value;
+            const typeFilter = document.querySelectorAll('.filter-select')[1].value;
+            const noteCards = document.querySelectorAll('.note-card');
+            
+            noteCards.forEach(card => {
+                let showCard = true;
+                
+                if (subjectFilter !== 'All Subjects') {
+                    const noteSubject = card.querySelector('.note-subject').textContent;
+                    if (noteSubject !== subjectFilter) {
+                        showCard = false;
+                    }
+                }
+                
+                card.style.display = showCard ? 'block' : 'none';
+            });
+        }
+
+        // New note button functionality
+        document.querySelector('.new-note-btn').addEventListener('click', function() {
+            alert('New note creation would open here!');
+        });
+
+        // Note card click functionality
+        document.querySelectorAll('.note-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                if (!e.target.classList.contains('note-action')) {
+                    alert('Note details would open here!');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZimPrep - Exam Papers</title>
+     <link rel="stylesheet" href= "{% static 'dashboard/exams.css' %}">
+    <script src="{% static 'js/script.js'%}" defer></script>
+
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">ZimPrep</div>
+        <nav class="nav-menu">
+            <a href="#" class="nav-item">
+                <div class="nav-icon">📊</div>
+                Dashboard
+            </a>
+            <a href="#" class="nav-item">
+                <div class="nav-icon">📝</div>
+                Notes
+            </a>
+            <a href="#" class="nav-item active">
+                <div class="nav-icon">📄</div>
+                Exam Papers
+            </a>
+            <a href="#" class="nav-item">
+                <div class="nav-icon">📚</div>
+                Study Plan
+            </a>
+            <a href="#" class="nav-item">
+                <div class="nav-icon">🔔</div>
+                Notifications
+            </a>
+            <a href="#" class="nav-item">
+                <div class="nav-icon">⚙️</div>
+                Settings
+            </a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <header class="header">
+            <div class="search-bar">
+                <input type="text" placeholder="Search exam papers...">
+            </div>
+            <div class="user-profile">
+                <div class="avatar">JS</div>
+                <span>John Smith</span>
+            </div>
+        </header>
+
+        <div class="content-area">
+            <h1 class="page-title">Exam Papers</h1>
+            <p class="page-subtitle">Access past papers, practice tests, and exam resources</p>
+
+            <div class="filter-bar">
+                <div class="filter-group">
+                    <label>Subject:</label>
+                    <select class="filter-select">
+                        <option>All Subjects</option>
+                        <option>Physics</option>
+                        <option>Mathematics</option>
+                        <option>Chemistry</option>
+                        <option>Biology</option>
+                        <option>English</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Year:</label>
+                    <select class="filter-select">
+                        <option>All Years</option>
+                        <option>2025</option>
+                        <option>2024</option>
+                        <option>2023</option>
+                        <option>2022</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Level:</label>
+                    <select class="filter-select">
+                        <option>All Levels</option>
+                        <option>O Level</option>
+                        <option>A Level</option>
+                        <option>ZIMSEC</option>
+                    </select>
+                </div>
+                <button class="add-button">+ Upload Paper</button>
+            </div>
+
+            <div class="papers-grid">
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div>
+                            <h3 class="paper-title">Physics Paper 1 - 2024</h3>
+                        </div>
+                        <span class="paper-subject">Physics</span>
+                    </div>
+                    <div class="paper-meta">
+                        <div class="meta-item">
+                            <span>📅</span>
+                            <span>November 2024</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>⏱️</span>
+                            <span>3 hours</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>📊</span>
+                            <span>O Level</span>
+                        </div>
+                    </div>
+                    <div class="paper-stats">
+                        <div class="stat">
+                            <div class="stat-value">45</div>
+                            <div class="stat-label">Questions</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">150</div>
+                            <div class="stat-label">Marks</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">87%</div>
+                            <div class="stat-label">Pass Rate</div>
+                        </div>
+                    </div>
+                    <div class="paper-actions">
+                        <button class="btn btn-primary">Start Practice</button>
+                        <button class="btn btn-secondary">Download</button>
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div>
+                            <h3 class="paper-title">Mathematics Paper 2 - 2024</h3>
+                        </div>
+                        <span class="paper-subject">Mathematics</span>
+                    </div>
+                    <div class="paper-meta">
+                        <div class="meta-item">
+                            <span>📅</span>
+                            <span>November 2024</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>⏱️</span>
+                            <span>2.5 hours</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>📊</span>
+                            <span>O Level</span>
+                        </div>
+                    </div>
+                    <div class="paper-stats">
+                        <div class="stat">
+                            <div class="stat-value">12</div>
+                            <div class="stat-label">Questions</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">100</div>
+                            <div class="stat-label">Marks</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">73%</div>
+                            <div class="stat-label">Pass Rate</div>
+                        </div>
+                    </div>
+                    <div class="paper-actions">
+                        <button class="btn btn-primary">Start Practice</button>
+                        <button class="btn btn-secondary">Download</button>
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div>
+                            <h3 class="paper-title">Chemistry Practical - 2024</h3>
+                        </div>
+                        <span class="paper-subject">Chemistry</span>
+                    </div>
+                    <div class="paper-meta">
+                        <div class="meta-item">
+                            <span>📅</span>
+                            <span>October 2024</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>⏱️</span>
+                            <span>2 hours</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>📊</span>
+                            <span>A Level</span>
+                        </div>
+                    </div>
+                    <div class="paper-stats">
+                        <div class="stat">
+                            <div class="stat-value">8</div>
+                            <div class="stat-label">Experiments</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">80</div>
+                            <div class="stat-label">Marks</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">92%</div>
+                            <div class="stat-label">Pass Rate</div>
+                        </div>
+                    </div>
+                    <div class="paper-actions">
+                        <button class="btn btn-primary">Start Practice</button>
+                        <button class="btn btn-secondary">Download</button>
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div>
+                            <h3 class="paper-title">Biology Paper 3 - 2024</h3>
+                        </div>
+                        <span class="paper-subject">Biology</span>
+                    </div>
+                    <div class="paper-meta">
+                        <div class="meta-item">
+                            <span>📅</span>
+                            <span>June 2024</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>⏱️</span>
+                            <span>1.5 hours</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>📊</span>
+                            <span>O Level</span>
+                        </div>
+                    </div>
+                    <div class="paper-stats">
+                        <div class="stat">
+                            <div class="stat-value">25</div>
+                            <div class="stat-label">Questions</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">60</div>
+                            <div class="stat-label">Marks</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">81%</div>
+                            <div class="stat-label">Pass Rate</div>
+                        </div>
+                    </div>
+                    <div class="paper-actions">
+                        <button class="btn btn-primary">Start Practice</button>
+                        <button class="btn btn-secondary">Download</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recent-activity">
+                <div class="activity-header">
+                    <h2 class="activity-title">Recent Activity</h2>
+                    <a href="#" style="color: #8a2be2; text-decoration: none;">View All</a>
+                </div>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon">📝</div>
+                        <div class="activity-content">
+                            <div class="activity-text">Completed Physics Paper 1 practice test</div>
+                            <div class="activity-time">2 hours ago</div>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">⬇️</div>
+                        <div class="activity-content">
+                            <div class="activity-text">Downloaded Mathematics marking scheme</div>
+                            <div class="activity-time">5 hours ago</div>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">📊</div>
+                        <div class="activity-content">
+                            <div class="activity-text">Scored 85% on Chemistry practical test</div>
+                            <div class="activity-time">1 day ago</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Filter functionality
+        document.querySelectorAll('.filter-select').forEach(select => {
+            select.addEventListener('change', function() {
+                console.log('Filter changed:', this.value);
+                // Implement filtering logic here
+            });
+        });
+
+        // Paper actions
+        document.querySelectorAll('.btn-primary').forEach(btn => {
+            btn.addEventListener('click', function() {
+                alert('Starting practice test...');
+            });
+        });
+
+        document.querySelectorAll('.btn-secondary').forEach(btn => {
+            btn.addEventListener('click', function() {
+                alert('Downloading paper...');
+            });
+        });
+    </script>
+</body>
+</html>

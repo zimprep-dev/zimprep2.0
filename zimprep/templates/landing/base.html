@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title%}ZimPrep{%endblock%} </title>
+    <link rel="stylesheet" href= "{% static 'css-landing/style.css' %}">
+    <script src="{% static 'js/script.js'%}" defer></script>
+</head>
+<body> 
+    <nav>
+        <div class="logo">
+            <span class="logo-icon">📚</span>
+            <span>ZimPrep</span>
+        </div>
+        <div class="nav-links">
+            <a href="#features">Features</a> 
+            <a href="#exams">Exam Papers</a>
+            <a href="#resources">Resources</a>
+            <a href="#ai">AI Tools</a>
+        </div>
+        <button class="mobile-menu-btn">☰</button>
+        <div class="auth-buttons">
+
+           <a href="/login">
+            <button class="login-btn">Login</button>
+           </a> 
+            <button class="signup-btn">Sign Up</button>
+        </div>
+    </nav>
+
+
+    
+    <section class="hero">
+        <h1>Your Complete Educational Resource Platform</h1>
+        <p>Access exam papers, study resources, and AI-powered learning tools all in one place. ZimPrep helps you excel in your Zimsec and Cambridge studies with organized content and smart features.</p>
+        <a href="#features" class="cta-btn">Explore Features</a>
+    </section>
+    
+    <section class="features" id="features">
+        <h2 class="section-title">Key Features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📝</div>
+                <h3>Exam Paper Repository</h3>
+                <p>Browse and download exam papers from various subjects and years. Filter by topics, difficulty levels, and more to find exactly what you need.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📚</div>
+                <h3>Resources Library</h3>
+                <p>Access study notes, textbooks, and learning materials organized in a familiar folder structure similar to Google Drive.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">💬</div>
+                <h3>Social Chat</h3>
+                <p>Connect with fellow students through direct messages and group chats. Share files, audio recordings, and collaborate on study materials.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="ai-features" id="ai">
+        <div class="ai-content">
+            <h2 class="section-title">AI Learning Assistant</h2>
+            <div class="ai-cards">
+                <div class="ai-card">
+                    <h3>Test Generation</h3>
+                    <p>Create custom practice tests based on specific topics and difficulty levels with our AI test maker.</p>
+                </div>
+                
+                <div class="ai-card">
+                    <h3>Notes Summarization</h3>
+                    <p>Upload your study materials and get AI-generated summaries to help you study more efficiently.</p>
+                </div>
+                
+                <div class="ai-card">
+                    <h3>Personalized Learning</h3>
+                    <p>Get AI recommendations for study materials based on your learning style and performance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="demo-section">
+        <h2 class="section-title">Platform Preview</h2>
+        <div class="demo-container">
+            <div class="tabs">
+                <div class="tab-btn active" data-tab="exams">Exam Papers</div>
+                <div class="tab-btn" data-tab="resources">Resources</div>
+                <div class="tab-btn" data-tab="ai-tools">AI Tools</div>
+            </div>
+            
+            <div class="mockup">
+                <div class="mockup-header">
+                    <div class="mockup-title">Exam Papers Repository</div>
+                    <div class="mockup-actions">
+                        <button class="login-btn">Search</button>
+                    </div>
+                </div>
+                
+                <div class="mockup-content">
+                    <div class="tab-content active" id="exams">
+                        <div class="papers-grid">
+                            <div class="paper-item">
+                                <div class="paper-icon">📄</div>
+                                <h4>Math 2024</h4>
+                                <p>Final Exam</p>
+                            </div>
+                            <div class="paper-item">
+                                <div class="paper-icon">📄</div>
+                                <h4>Physics 2023</h4>
+                                <p>May Series </p>
+                            </div>
+                            <div class="paper-item">
+                                <div class="paper-icon">📄</div>
+                                <h4>Chemistry 2024</h4>
+                                <p>Quiz 2</p>
+                            </div>
+                            <div class="paper-item">
+                                <div class="paper-icon">📄</div>
+                                <h4>Biology 2023</h4>
+                                <p>Final Exam November</p>
+                            </div>
+                            <div class="paper-item">
+                                <div class="paper-icon">📄</div>
+                                <h4>History 2024</h4>
+                                <p>Midterm</p>
+                            </div>
+                            <div class="paper-item">
+                                <div class="paper-icon">📄</div>
+                                <h4>Computer Science</h4>
+                                <p>Practice Test</p>
+                            </div>
+                            <div class="paper-item">
+                                <div class="paper-icon">📄</div>
+                                <h4>English 2023</h4>
+                                <p>Essay Exam</p>
+                            </div>
+                            <div class="paper-item">
+                                <div class="paper-icon">📄</div>
+                                <h4>Geography 2024</h4>
+                                <p>Quiz 1</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="resources">
+                        <div class="folders-grid">
+                            <div class="folder-item">
+                                <div class="folder-icon">📁</div>
+                                <h4>Mathematics</h4>
+                            </div>
+                            <div class="folder-item">
+                                <div class="folder-icon">📁</div>
+                                <h4>Physics</h4>
+                            </div>
+                            <div class="folder-item">
+                                <div class="folder-icon">📁</div>
+                                <h4>Chemistry</h4>
+                            </div>
+                            <div class="folder-item">
+                                <div class="folder-icon">📁</div>
+                                <h4>Biology</h4>
+                            </div>
+                            <div class="folder-item">
+                                <div class="folder-icon">📁</div>
+                                <h4>Literature</h4>
+                            </div>
+                            <div class="folder-item">
+                                <div class="folder-icon">📁</div>
+                                <h4>History</h4>
+                            </div>
+                            <div class="folder-item">
+                                <div class="folder-icon">📁</div>
+                                <h4>Computer Science</h4>
+                            </div>
+                            <div class="folder-item">
+                                <div class="folder-icon">📁</div>
+                                <h4>Geography</h4>
+                            </div>
+                            <div class="folder-item">
+                                <div class="folder-icon">📁</div>
+                                <h4>Economics</h4>
+                            </div>
+                            <div class="folder-item">
+                                <div class="folder-icon">📁</div>
+                                <h4>Business Studies</h4>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="ai-tools">
+                        <div class="ai-interface">
+                            <div class="ai-messages">
+                                <div class="message ai-message">
+                                    Hello! I'm your StudyHub AI assistant. How can I help you today? I can summarize notes, create practice questions, or help you find specific study materials.
+                                </div>
+                                <div class="message user-message">
+                                    Can you summarize my chemistry notes on atomic structure?
+                                </div>
+                                <div class="message ai-message">
+                                    I'd be happy to summarize your chemistry notes on atomic structure. Please upload your notes or provide the specific content you'd like me to summarize.
+                                </div>
+                                <div class="message user-message">
+                                    Can you create 5 practice questions on atomic structure instead?
+                                </div>
+                                <div class="message ai-message">
+                                    Here are 5 practice questions on atomic structure:
+                                    
+                                    1. Describe the Bohr model of the atom and explain its limitations.
+                                    
+                                    2. Calculate the wavelength of an electron with a velocity of 3.0 × 10^6 m/s.
+                                    
+                                    3. Explain the significance of quantum numbers in describing an electron's position.
+                                    
+                                    4. Compare and contrast the properties of protons, neutrons, and electrons.
+                                    
+                                    5. Explain how the electron configuration of an atom relates to its position in the periodic table.
+                                </div>
+                            </div>
+                            <div class="ai-input">
+                                <input type="text" placeholder="Ask the AI assistant...">
+                                <button>Send</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>ZimPrep</h3>
+                <p>Your complete educational resource platform designed to help students access study materials, practice with past papers, and connect with peers.</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#exams">Exam Papers</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#ai">AI Tools</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul>
+                    <li>Email: contact@ZimPrep.com</li>
+                    <li>Phone: +263 773 591 167</li>
+                    <li>Address: 53 Jason Moyo, Harare</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 ZimPrep. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

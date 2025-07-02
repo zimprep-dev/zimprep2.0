@@ -1,0 +1,116 @@
+I will write what i learn here 
+
+- So to work with urls you also need to work with views, views will hold the specific instruction you want you want your site to work with 
+
+- in practice it looks something like this 
+
+        from django.shortcuts import render 
+        from django.http import HttpResponse
+
+        def home(request):
+            return render(request, your file name)
+
+def filename (request) : 
+     return render(request. filename )
+     return redirect(dashboard)
+
+SLUG DEFINITION 
+
+from django.db import models
+from django.utils.text import slugify 
+
+class Subject(models.Model): 
+
+    name = Models.Charfield(max_length)
+    slug = models.SlugField(max_length, unique = True)
+
+
+Field optios categories :
+
+Validation options 
+
+- max_length = 199
+- min_length = 8
+- unique = True 
+- unique_for_date'created_at'
+- unique_for_month'created_at'
+- unique_for_year'created_at'
+
+
+Database Options
+
+- db_index = True, 
+- db_column = 'custom_slug_name'
+- db_tablespace = custom_tablespace
+
+Form Options 
+
+slug = models.SlugField (
+        blank = True 
+        null = True
+        default = 
+        editable = False
+        error_messages = {
+            unique : this slug is already taken 
+            max_length : slug is too long 
+            null = This field cannot be empty 
+        }
+)
+
+Display Options : 
+
+slug = models.SlugField(
+    verbose_name = URL Slug 
+    verbose_name_plural = URL Slugs
+    help_text = Auto generated from the name 
+    primary_key = false 
+)
+
+This common field options that you should use are 
+
+# slugs 
+
+blank = true
+max_length = number 
+unique = True 
+null = True
+default = ;;
+db_index = True 
+editable = false
+
+# Charfield 
+
+names = models.Charfield(
+    max_length = numbers, 
+    min_length = number, 
+    blank= True OR fALSE
+    null = True
+    default = 
+    choices = [
+        (math, mathematics), 
+        (science, Science), 
+        (english, English)
+    ], 
+    
+)
+
+# For file uploadig 
+
+file = models.FIleField (
+    upload_to = directory
+    verbose_name = file_name
+    validators = [
+        FileExtensionValidator(allowed_extension = [pdf, doc, docx])
+    ]
+)
+
+
+
+
+\\
+
+
+
+
+
+

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZimPrep - Settings</title>
+     <link rel="stylesheet" href= "{% static 'dashboard/setting.css' %}">
+    <script src="{% static 'js/script.js'%}" defer></script>
+
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">ZimPrep</div>
+        
+        <nav>
+            <div class="nav-item">
+                <span class="icon">📊</span>
+                Dashboard
+            </div>
+            <div class="nav-item">
+                <span class="icon">📝</span>
+                Notes
+            </div>
+            <div class="nav-item">
+                <span class="icon">📄</span>
+                Exam Papers
+            </div>
+            <div class="nav-item">
+                <span class="icon">📚</span>
+                Study Plan
+            </div>
+            <div class="nav-item">
+                <span class="icon">🔔</span>
+                Notifications
+            </div>
+            <div class="nav-item active">
+                <span class="icon">⚙️</span>
+                Settings
+            </div>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <div>
+                <h1 class="page-title">Settings</h1>
+                <p class="page-subtitle">Customize your ZimPrep experience</p>
+            </div>
+            <div class="user-profile">
+                <div class="user-avatar">JS</div>
+                <span>John Smith</span>
+            </div>
+        </div>
+
+        <div class="settings-grid">
+            <!-- Personal Details -->
+            <div class="settings-card">
+                <h2 class="card-title">
+                    <span class="icon">👤</span>
+                    Personal Details
+                </h2>
+                
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <span class="setting-name">Full Name</span>
+                    </div>
+                    <input type="text" class="input-field" value="John Smith">
+                </div>
+                
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <span class="setting-name">Email Address</span>
+                    </div>
+                    <input type="email" class="input-field" value="john.smith@email.com">
+                </div>
+                
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <span class="setting-name">Phone Number</span>
+                    </div>
+                    <input type="tel" class="input-field" value="+263 77 123 4567">
+                </div>
+                
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <span class="setting-name">School/Institution</span>
+                    </div>
+                    <input type="text" class="input-field" value="University of Zimbabwe">
+                </div>
+                
+                <div style="margin-top: 16px;">
+                    <button class="btn btn-primary">Save Changes</button>
+                    <button class="btn btn-secondary" style="margin-left: 8px;">Cancel</button>
+                </div>
+            </div>
+
+            <!-- Storage Settings -->
+            <div class="settings-card">
+                <h2 class="card-title">
+                    <span class="icon">💾</span>
+                    Storage Settings
+                </h2>
+                
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <span class="setting-name">Download Location</span>
+                        <span class="setting-description">Choose where downloaded papers are saved</span>
+                    </div>
+                    <button class="btn btn-secondary" onclick="selectFolder()">Browse</button>
+                </div>
+                
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <span class="setting-name">Current Path</span>
+                        <span class="setting-description" style="font-family: monospace;">/Users/john/Downloads/ZimPrep</span>
+                    </div>
+                </div>
+                
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <span class="setting-name">Auto-organize by Subject</span>
+                        <span class="setting-description">Create folders for each subject</span>
+                    </div>
+                    <div class="toggle-switch active" onclick="toggleSwitch(this)"></div>
+                </div>
+                
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <span class="setting-name">Storage Used</span>
+                        <span class="setting-description">247 MB of downloaded papers</span>
+                    </div>
+                    <button class="btn btn-secondary">Clear Cache</button>
+                </div>
+            </div>
+
+            <!-- Membership -->
+            <div class="settings-card">
+                <h2 class="card-title">
+                    <span class="icon">👑</span>
+                    Membership
+                </h2>
+                
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <span class="setting-name">Current Plan</span>
+                    </div>
+                    <div class="membership-badge">Premium</div>
+                </div>
+                
+                <div class="membership-info">
+                    <strong>Premium Benefits:</strong>
+                    <ul style="margin: 8px 0 0 16px; color: #92400e;">
+                        <li>Unlimited paper downloads</li>
+                        <li>Access to all subjects and levels</li>
+                        <li>Offline study mode</li>
+                        <li>Priority customer support</li>
+                    </ul>
+                </div>
+                
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <span class="setting-name">Next Billing Date</span>
+                        <span class="setting-description">Your subscription renews on July 15, 2025</span>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 16px;">
+                    <button class="btn btn-primary">Manage Subscription</button>
+                    <button class="btn btn-secondary" style="margin-left: 8px;">View Invoice</button>
+                </div>
+            </div>
+
+            <!-- Study Features -->
+            <div class="settings-card">
+                <h2 class="card-title">
+                    <span class="icon">📚</span>
+                    Study Features
+                </h2>
+                
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <div class="setting-label">
+                            <span class="setting-name">Timer Notifications</span>
+                            <span class="setting-description">Get break reminders</span>
+                        </div>
+                        <div class="toggle-switch active" onclick="toggleSwitch(this)"></div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="setting-label">
+                            <span class="setting-name">Auto-save Progress</span>
+                            <span class="setting-description">Save your work automatically</span>
+                        </div>
+                        <div class="toggle-switch active" onclick="toggleSwitch(this)"></div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="setting-label">
+                            <span class="setting-name">Dark Mode</span>
+                            <span class="setting-description">Easier on the eyes</span>
+                        </div>
+                        <div class="toggle-switch" onclick="toggleSwitch(this)"></div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="setting-label">
+                            <span class="setting-name">Sound Effects</span>
+                            <span class="setting-description">Audio feedback</span>
+                        </div>
+                        <div class="toggle-switch" onclick="toggleSwitch(this)"></div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="setting-label">
+                            <span class="setting-name">Performance Analytics</span>
+                            <span class="setting-description">Track your improvement</span>
+                        </div>
+                        <div class="toggle-switch active" onclick="toggleSwitch(this)"></div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="setting-label">
+                            <span class="setting-name">Study Reminders</span>
+                            <span class="setting-description">Daily study notifications</span>
+                        </div>
+                        <div class="toggle-switch active" onclick="toggleSwitch(this)"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Focus Mode -->
+            <div class="settings-card">
+                <h2 class="card-title">
+                    <span class="icon">🎯</span>
+                    Focus Mode
+                </h2>
+                
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <span class="setting-name">Enable Focus Mode</span>
+                        <span class="setting-description">Hide distracting elements during study</span>
+                    </div>
+                    <div class="toggle-switch active" onclick="toggleFocusMode(this)"></div>
+                </div>
+                
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <span class="setting-name">Hide Social Features</span>
+                        <span class="setting-description">Remove leaderboards and social elements</span>
+                    </div>
+                    <div class="toggle-switch active" onclick="toggleSwitch(this)"></div>
+                </div>
+                
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <span class="setting-name">Minimal UI</span>
+                        <span class="setting-description">Show only essential interface elements</span>
+                    </div>
+                    <div class="toggle-switch active" onclick="toggleSwitch(this)"></div>
+                </div>
+                
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <span class="setting-name">Block Notifications</span>
+                        <span class="setting-description">Disable all non-essential notifications</span>
+                    </div>
+                    <div class="toggle-switch active" onclick="toggleSwitch(this)"></div>
+                </div>
+                
+                <div class="focus-mode-preview" id="focusPreview">
+                    <strong>Focus Mode Active</strong><br>
+                    Distraction-free studying environment enabled
+                </div>
+            </div>
+
+            <!-- Notification Preferences -->
+            <div class="settings-card">
+                <h2 class="card-title">
+                    <span class="icon">🔔</span>
+                    Notifications
+                </h2>
+                
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <span class="setting-name">Email Notifications</span>
+                        <span class="setting-description">Receive updates via email</span>
+                    </div>
+                    <div class="toggle-switch active" onclick="toggleSwitch(this)"></div>
+                </div>
+                
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <span class="setting-name">Push Notifications</span>
+                        <span class="setting-description">Browser notifications</span>
+                    </div>
+                    <div class="toggle-switch active" onclick="toggleSwitch(this)"></div>
+                </div>
+                
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <span class="setting-name">Study Streak Reminders</span>
+                        <span class="setting-description">Daily motivation messages</span>
+                    </div>
+                    <div class="toggle-switch active" onclick="toggleSwitch(this)"></div>
+                </div>
+                
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <span class="setting-name">New Papers Alert</span>
+                        <span class="setting-description">Notify when new exam papers are added</span>
+                    </div>
+                    <div class="toggle-switch active" onclick="toggleSwitch(this)"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleSwitch(element) {
+            element.classList.toggle('active');
+        }
+
+        function toggleFocusMode(element) {
+            element.classList.toggle('active');
+            const preview = document.getElementById('focusPreview');
+            if (element.classList.contains('active')) {
+                preview.innerHTML = '<strong>Focus Mode Active</strong><br>Distraction-free studying environment enabled';
+                preview.style.background = '#dcfce7';
+                preview.style.borderColor = '#16a34a';
+                preview.style.color = '#15803d';
+            } else {
+                preview.innerHTML = '<strong>Focus Mode Disabled</strong><br>All features and distractions are visible';
+                preview.style.background = '#fef2f2';
+                preview.style.borderColor = '#dc2626';
+                preview.style.color = '#dc2626';
+            }
+        }
+
+        function selectFolder() {
+            alert('File browser would open here to select download location');
+        }
+
+        // Add some interactive behavior
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

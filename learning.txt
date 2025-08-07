@@ -109,8 +109,11 @@ file = models.FIleField (
 
 Learnt about settinng up github 
 
-git config --global user.name -- your mail
-git config --global user.email --- your email
+git config --global user.name -- your mail :    #  to set up user name for commiting
+git config --global user.email --- your email : #  to set up email to use when commiting 
+touch .gitignore # the program ignores a particular set of files 
+
+
 
 
 

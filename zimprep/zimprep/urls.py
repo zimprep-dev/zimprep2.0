@@ -16,6 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 from . import views
 
 urlpatterns = [
@@ -25,4 +27,18 @@ urlpatterns = [
     path('signup/', views.signup_view, name='signup'),
     path('login/', views.login_view, name='login'),
     path('logout/', views.logout_view, name='logout'),
+    
+    # Note URLs
+    path('notes/', views.NoteListView.as_view(), name='note-list'),
+    path('notes/create/', views.NoteCreateView.as_view(), name='note-create'),
+    path('notes/<int:pk>/', views.NoteDetailView.as_view(), name='note-detail'),
+    path('notes/<int:pk>/edit/', views.NoteUpdateView.as_view(), name='note-update'),
+    path('notes/<int:pk>/delete/', views.NoteDeleteView.as_view(), name='note-delete'),
+    path('notes/quick-create/', views.note_quick_create, name='note-quick-create'),
+    path('notes/<int:pk>/toggle-public/', views.note_toggle_public, name='note-toggle-public'),
+    path('notes/<int:pk>/share/', views.note_share, name='note-share'),
 ]
+
+# Serve media files during development
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
